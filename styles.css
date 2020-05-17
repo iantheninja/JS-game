@@ -54,6 +54,14 @@ header > h1 {
   right: -25px;
 }
 
+.win {
+  color: #979931;
+}
+
+.lose {
+  color: #cb1010;
+}
+
 .result {
   font-size: 40px;
   color: #ffffff;
