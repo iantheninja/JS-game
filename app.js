@@ -8,20 +8,24 @@ const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
 
+
 function getComputerChoice() {
   const choices = ['rock', 'paper', 'scissors'];
   return choices[Math.floor(Math.random() * 3)];
 }
 
-function draw() {
+function draw(compChoice, usrChoice) {
+  result_div.innerHTML = "<p>You chose <span id='draw'>" + usrChoice + "</span>. Computer Chose <span id='draw'>" + compChoice + "</span>.</p>";
   console.log("The round is a draw");
 }
 
-function win() {
+function win(compChoice, usrChoice) {
+  result_div.innerHTML = "<p>You chose <span id='win'>" + usrChoice + "</span>. Computer Chose <span id='lose'>" + compChoice + "</span>.</p>";
   console.log("You won this round!! Congratulations!!!");
 }
 
-function lose() {
+function lose(compChoice, usrChoice) {
+  result_div.innerHTML = "<p>You chose <span id='lose'>" + usrChoice + "</span>. Computer Chose <span id='win'>" + compChoice + "</span>.</p>";
   console.log("You lost the round! Try again!");
 }
 
@@ -29,19 +33,19 @@ function game(userChoice) {
   const computerChoice = getComputerChoice();
 
   if (computerChoice == userChoice) {
-    draw();
+    draw(computerChoice, userChoice);
   } else if (computerChoice === "rock" && userChoice === "paper"){
-    win();
+    win(computerChoice, userChoice);
   } else if  (computerChoice === "paper" && userChoice === "scissors") {
-    win();
+    win(computerChoice, userChoice);
   } else if  (computerChoice === "rock" && userChoice === "scissors") {
-    lose();
+    lose(computerChoice, userChoice);
   } else if  (computerChoice === "scissors" && userChoice === "paper") {
-    lose();
+    lose(computerChoice, userChoice);
   } else if  (computerChoice === "paper" && userChoice === "rock") {
-    lose();
+    lose(computerChoice, userChoice);
   } else if  (computerChoice === "scissors" && userChoice === "rock") {
-    win ();
+    win (computerChoice, userChoice);
   } else {
     console.log("Invalid choice try again");
   }

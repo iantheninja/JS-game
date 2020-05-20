@@ -37,7 +37,7 @@ header > h1 {
 .badge {
   font-size: 14px;
   background-color: #E2584D;
-  color: white;
+  color: #ffffff;
   padding: 2px 10px;
   font-family: 'Asap', sans-serif;
 }
@@ -54,12 +54,16 @@ header > h1 {
   right: -25px;
 }
 
-.win {
+#win {
   color: #979931;
 }
 
-.lose {
+#lose {
   color: #cb1010;
+}
+
+#draw {
+  color: #D3D3D3;
 }
 
 .result {
